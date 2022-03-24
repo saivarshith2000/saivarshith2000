@@ -17,11 +17,28 @@
     <title>Sai Varshith | Incoming Site Reliability Enginner</title>
 </head>
 
-<script>
+<script defer>
     var current_active = "nav_home"
 
     window.onload = function () {
         document.getElementById(current_active).classList.add('active-nav')
+
+        var observer = new IntersectionObserver(function (entries) {
+            // isIntersecting is true when element and viewport are overlapping
+            // isIntersecting is false when element and viewport don't overlap
+            if (entries[0].isIntersecting === true)
+                console.log("Called for :")
+            console.log(entries[0].target.id)
+            update_nav(entries[0].target.id)
+        }, { threshold: [1] });
+
+
+        observer.observe(document.getElementById("nav_home"));
+        observer.observe(document.getElementById("nav_research"));
+        observer.observe(document.getElementById("nav_academics"));
+        observer.observe(document.getElementById("nav_career"));
+        observer.observe(document.getElementById("nav_skills"));
+        observer.observe(document.getElementById("nav_resume"));
     }
 
     function update_nav(nav_id) {
@@ -68,8 +85,10 @@
             </div>
             <ul>
                 <li>Published a 3-page paper on "Enabling Attirbute-Based Access Control (ABAC) in Linux Kernel" at the
-                    <a class="external_link" target="_blank" href="https://asiaccs2022.conferenceservice.jp/accepted-papers/poster/">ASIA
-                        CCS 2022 Conference</a> organized by <a class="external_link" target="_blank" href="https://www.acm.org/">ACM</a>.
+                    <a class="external_link" target="_blank"
+                        href="https://asiaccs2022.conferenceservice.jp/accepted-papers/poster/">ASIA
+                        CCS 2022 Conference</a> organized by <a class="external_link" target="_blank"
+                        href="https://www.acm.org/">ACM</a>.
                 </li>
             </ul>
         </div>
@@ -145,10 +164,17 @@
 
         <div id="resume" style="line-height: 1.5" class="section">
             <h1>RESUME</h1>
-            <div>Download my resume in <a class="external_link" target="_blank" href="./sai_varshith_resume.pdf">PDF</a> or 
-            <a class="external_link" target="_blank" href="./sai_varshith_resume.doc">DOC</a> format.
+            <div>Download my resume in <a class="external_link" target="_blank" href="./sai_varshith_resume.pdf">PDF</a>
+                or
+                <a class="external_link" target="_blank" href="./sai_varshith_resume.doc">DOC</a> format.
+            </div>
+            <div class="footer">
+                <small>Note: This website is made with HTML, CSS and Javascript from scratch and hosted on GitHub Pages. Icons
+                    provided by <a href="https://fontawesome.com/icons" target="_blank" class="dull_link">Font Awesome</a> 
+                    and Roboto Mono Font by <a href="https://fonts.google.com/specimen/Roboto+Mono" target="_blank" class="dull_link">Google Fonts</a> via CDN.</small>
+            </div>
         </div>
-    </div>
+
 </body>
 
 </html>

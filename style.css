@@ -5,14 +5,14 @@ body {
     /* font-family: 'Courier Prime', monospace; */
     /* font-family: 'JetBrains Mono', monospace; */
     line-height: 1.3;
-    font-size: 18px;
+    font-size: 16px;
     background-color: #efefef;
     color: #111;
 }
 
 @media (max-width: 768px) {
     body {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.2;
     }
 }
@@ -97,7 +97,7 @@ li {
 
 .container {
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
     padding: auto;
     padding-left: 250px;
     width: 60%;
@@ -113,6 +113,17 @@ li {
 
 .section {
     padding: auto;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+    .section {
+        display: block;
+        height: auto;
+    }
 }
 
 .career-entry {
@@ -158,4 +169,19 @@ li {
     font-weight: bold;
     color: green;
     margin-top: 10px;
+}
+
+.footer {
+    background-color: #ddd;
+    color: #666;
+    /* margin-top: 50%; */
+    bottom: 0 !important;
+    margin-top: 20px;
+    padding: 20px;
+    padding: auto;
+}
+
+.dull_link {
+    color: inherit;
+    text-decoration: underline;
 }
